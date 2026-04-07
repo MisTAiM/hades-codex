@@ -76,14 +76,7 @@ body {
   pointer-events: none;
 }
 
-/* ---- Dark overlay — sits over fire, under all content ---- */
-#dark-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(5, 0, 12, 0.62);
-  z-index: 1;
-  pointer-events: none;
-}
+
 
 /* ---- Scroll Progress Bar ---- */
 #scroll-progress {
@@ -162,7 +155,7 @@ body {
 /* ---- Sections ---- */
 section {
   position: relative;
-  z-index: 2;
+  z-index: 1;
   padding: var(--section-pad);
 }
 
@@ -353,7 +346,9 @@ section {
 .card-front, .card-back {
   position: absolute;
   inset: 0;
-  background: rgba(13,0,24,0.25);
+  background: rgba(8,0,16,0.55);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
   border: 1px solid var(--glass-border);
   padding: 1.75rem;
   backface-visibility: hidden;
@@ -561,7 +556,9 @@ section {
   margin: 0 auto;
 }
 .god-card {
-  background: rgba(13,0,24,0.22);
+  background: rgba(8,0,16,0.50);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--glass-border);
   padding: 1.5rem;
   position: relative;
@@ -685,7 +682,9 @@ section {
   margin: 0 auto;
 }
 .duo-card {
-  background: rgba(13,0,24,0.20);
+  background: rgba(8,0,16,0.45);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   border: 1px solid var(--glass-border);
   padding: 1.25rem;
   position: relative;
@@ -783,7 +782,9 @@ section {
   margin: 0 auto;
 }
 .boon-db-card {
-  background: rgba(13,0,24,0.18);
+  background: rgba(8,0,16,0.40);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--glass-border);
   padding: 1rem;
   transition: border-color 0.2s, transform 0.15s;
@@ -801,7 +802,9 @@ section {
 #heat-builder {
   max-width: 700px;
   margin: 0 auto;
-  background: rgba(13,0,24,0.20);
+  background: rgba(8,0,16,0.45);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   border: 1px solid var(--glass-border);
   padding: 2rem;
 }
@@ -915,7 +918,9 @@ section {
   gap: 1rem;
   align-items: flex-start;
   padding: 1rem;
-  background: rgba(13,0,24,0.20);
+  background: rgba(8,0,16,0.45);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   border: 1px solid var(--glass-border);
   border-left: 3px solid var(--gold-dim);
   opacity: 0;
@@ -942,7 +947,7 @@ section {
 /* ---- FOOTER ---- */
 footer {
   position: relative;
-  z-index: 2;
+  z-index: 1;
   padding: 4rem 2rem;
   border-top: 1px solid var(--glass-border);
   text-align: center;
