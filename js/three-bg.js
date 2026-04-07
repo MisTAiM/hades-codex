@@ -117,20 +117,21 @@ class HadesBackground {
         float f = fbm(uv*1.8 + 3.2*r + t*0.07);
 
         /* Fire is STRONGEST at bottom, fades toward top — but never fully zero */
-        float rise   = 0.60 + 0.40*(1.0 - smoothstep(-0.05, 1.1, uv.y*1.0  - f*0.3));
+        /* Uniform atmospheric glow — same dark moody look top to bottom */
+        float rise   = 0.20 + 0.25*(1.0 - smoothstep(0.0, 1.2, uv.y - f*0.25));
         float fire   = f * rise;
-        fire = clamp(fire - 0.04, 0.0, 1.0);
+        fire = clamp(fire - 0.02, 0.0, 1.0);
 
-        /* High-freq flicker overlay */
-        float flicker = noise(vec2(uv.x*14.0, t*9.0))*0.07*rise;
+        /* High-freq flicker */
+        float flicker = noise(vec2(uv.x*14.0, t*9.0))*0.04;
         fire = clamp(fire + flicker, 0.0, 1.0);
 
         /* Slight horizontal vignette */
         float vign = smoothstep(0.0,0.18,uv.x)*smoothstep(0.0,0.18,1.0-uv.x);
 
-        vec3 col = fireColour(fire*1.25) * (0.85 + 0.15*vign);
+        vec3 col = fireColour(fire*1.1) * (0.85 + 0.15*vign);
 
-        /* Solid opaque — this IS the background */
+        /* Solid opaque */
         gl_FragColor = vec4(col, 1.0);
       }
     `;
@@ -172,7 +173,7 @@ class HadesBackground {
       transparent: true,
       blending: THREE.AdditiveBlending,
       depthWrite: false,
-      opacity: 0.65
+      opacity: 0.18
     });
     this.doomMesh = new THREE.Mesh(geo, mat);
     this.doomMesh.position.set(0, -18, -2);
