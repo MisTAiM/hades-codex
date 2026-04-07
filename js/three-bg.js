@@ -367,25 +367,8 @@ class HadesBackground {
     this.c4 = make(THREE.IcosahedronGeometry, [4,1], 0x224488, -10,-14,-18, 0.05);
   }
 
-  /* Dark smoky volume fog plane */
-  createVolumeFog() {
-    const fogCanvas = document.createElement('canvas');
-    fogCanvas.width = fogCanvas.height = 256;
-    const ctx = fogCanvas.getContext('2d');
-    const g   = ctx.createRadialGradient(128,128,0,128,128,128);
-    g.addColorStop(0,   'rgba(30,0,40,0.35)');
-    g.addColorStop(0.5, 'rgba(10,0,20,0.15)');
-    g.addColorStop(1,   'rgba(0,0,0,0)');
-    ctx.fillStyle = g;
-    ctx.fillRect(0,0,256,256);
-    const tex = new THREE.CanvasTexture(fogCanvas);
-    const fog = new THREE.Mesh(
-      new THREE.PlaneGeometry(200,80),
-      new THREE.MeshBasicMaterial({ map: tex, transparent: true, depthWrite: false })
-    );
-    fog.position.set(0, 0, -22);
-    this.scene.add(fog);
-  }
+  /* Volume fog removed — was blocking fire */
+  createVolumeFog() {}
 
   /* Render loop */
   animate() {
