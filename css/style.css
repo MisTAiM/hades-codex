@@ -34,7 +34,7 @@ html {
 }
 
 body {
-  background: var(--void);
+  background: transparent;
   color: var(--bone);
   font-family: var(--font-body);
   font-size: 17px;
@@ -100,7 +100,7 @@ body {
   border-bottom: 1px solid transparent;
 }
 #site-nav.scrolled {
-  background: rgba(6,0,14,0.92);
+  background: rgba(6,0,14,0.55);
   backdrop-filter: blur(16px);
   border-bottom-color: var(--glass-border);
   padding: 0.8rem 3rem;
@@ -344,7 +344,7 @@ section {
 .card-front, .card-back {
   position: absolute;
   inset: 0;
-  background: rgba(13,0,24,0.85);
+  background: rgba(13,0,24,0.25);
   border: 1px solid var(--glass-border);
   padding: 1.75rem;
   backface-visibility: hidden;
@@ -552,7 +552,7 @@ section {
   margin: 0 auto;
 }
 .god-card {
-  background: rgba(13,0,24,0.8);
+  background: rgba(13,0,24,0.22);
   border: 1px solid var(--glass-border);
   padding: 1.5rem;
   position: relative;
@@ -676,7 +676,7 @@ section {
   margin: 0 auto;
 }
 .duo-card {
-  background: rgba(13,0,24,0.7);
+  background: rgba(13,0,24,0.20);
   border: 1px solid var(--glass-border);
   padding: 1.25rem;
   position: relative;
@@ -774,7 +774,7 @@ section {
   margin: 0 auto;
 }
 .boon-db-card {
-  background: rgba(13,0,24,0.6);
+  background: rgba(13,0,24,0.18);
   border: 1px solid var(--glass-border);
   padding: 1rem;
   transition: border-color 0.2s, transform 0.15s;
@@ -792,7 +792,7 @@ section {
 #heat-builder {
   max-width: 700px;
   margin: 0 auto;
-  background: rgba(13,0,24,0.7);
+  background: rgba(13,0,24,0.20);
   border: 1px solid var(--glass-border);
   padding: 2rem;
 }
@@ -906,7 +906,7 @@ section {
   gap: 1rem;
   align-items: flex-start;
   padding: 1rem;
-  background: rgba(13,0,24,0.7);
+  background: rgba(13,0,24,0.20);
   border: 1px solid var(--glass-border);
   border-left: 3px solid var(--gold-dim);
   opacity: 0;
@@ -937,6 +937,7 @@ footer {
   padding: 4rem 2rem;
   border-top: 1px solid var(--glass-border);
   text-align: center;
+  background: transparent;
 }
 .footer-logo {
   font-family: var(--font-display);
