@@ -117,7 +117,7 @@ class HadesBackground {
         float f = fbm(uv*1.8 + 3.2*r + t*0.07);
 
         /* Fire is STRONGEST at bottom, fades toward top — but never fully zero */
-        float rise   = 0.15 + 0.85*(1.0 - smoothstep(-0.05, 1.1, uv.y*1.15 - f*0.3));
+        float rise   = 0.60 + 0.40*(1.0 - smoothstep(-0.05, 1.1, uv.y*1.0  - f*0.3));
         float fire   = f * rise;
         fire = clamp(fire - 0.04, 0.0, 1.0);
 
