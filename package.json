@@ -1,0 +1,13 @@
+{
+  "name": "hades-codex",
+  "version": "1.2.0",
+  "description": "The ultimate Hades game compendium — weapons, builds, gods, boons, heat calculator",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve .",
+    "dev": "npx serve . --port 3000"
+  },
+  "keywords": ["hades", "game", "compendium", "builds", "guide"],
+  "author": "MisTAiM",
+  "license": "MIT"
+}

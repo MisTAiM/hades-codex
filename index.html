@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HADES CODEX — The Underworld Compendium</title>
+  <meta name="description" content="The ultimate Hades game guide. Weapons, builds, gods, boons, and the heat calculator — all in one place."/>
+  <meta property="og:title" content="HADES CODEX"/>
+  <meta property="og:description" content="Master the Underworld. Weapons, builds, gods, duo boons, heat calculator — complete compendium."/>
+  <meta property="og:type" content="website"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+  <!-- Scroll Progress -->
+  <div id="scroll-progress"></div>
+
+  <!-- Three.js Background Canvas -->
+  <canvas id="cosmos-bg"></canvas>
+
+  <!-- Navigation -->
+  <nav id="site-nav">
+    <a class="nav-logo" href="#">
+      <svg class="nav-logo-icon" viewBox="0 0 28 28" fill="none">
+        <polygon points="14,1 27,8 27,20 14,27 1,20 1,8" stroke="#d4af37" stroke-width="1.5" fill="rgba(212,175,55,0.05)"/>
+        <line x1="14" y1="7" x2="14" y2="21" stroke="#d4af37" stroke-width="1.5"/>
+        <line x1="8" y1="14" x2="20" y2="14" stroke="#d4af37" stroke-width="1"/>
+        <circle cx="14" cy="14" r="2.5" fill="#d4af37" opacity="0.7"/>
+      </svg>
+      HADES CODEX
+    </a>
+    <ul class="nav-links">
+      <li><a class="nav-link" href="#weapons">Arsenal</a></li>
+      <li><a class="nav-link" href="#gods">Olympians</a></li>
+      <li><a class="nav-link" href="#duos">Duos</a></li>
+      <li><a class="nav-link" href="#boons">Boons</a></li>
+      <li><a class="nav-link" href="#heat">Heat</a></li>
+      <li><a class="nav-link" href="#mirror">Mirror</a></li>
+    </ul>
+  </nav>
+
+  <!-- ======================== HERO ======================== -->
+  <section id="hero">
+    <div class="hero-tag">THE COMPLETE UNDERWORLD COMPENDIUM</div>
+
+    <div id="hero-logo">
+      <svg viewBox="0 0 320 120" width="320" style="max-width:90vw">
+        <!-- Outer border -->
+        <rect x="2" y="2" width="316" height="116" fill="none" stroke="#d4af3722" stroke-width="1"/>
+        <rect x="6" y="6" width="308" height="108" fill="none" stroke="#d4af3744" stroke-width="0.5"/>
+
+        <!-- Corner diamonds -->
+        <polygon points="6,6 14,6 6,14" fill="#d4af3788"/>
+        <polygon points="314,6 306,6 314,14" fill="#d4af3788"/>
+        <polygon points="6,114 14,114 6,106" fill="#d4af3788"/>
+        <polygon points="314,114 306,114 314,106" fill="#d4af3788"/>
+
+        <!-- Flame SVG paths -->
+        <path d="M20 90 Q22 70 26 80 Q28 60 32 75 Q36 50 40 70 Q42 55 44 68 Q46 45 50 65 Q50 40 55 60 Q55 35 60 55 Q60 30 65 52 Q68 28 70 50 Q70 25 75 48 Q77 22 80 45 Q82 20 85 43 Q87 18 90 40 Q90 15 95 38 Q97 12 100 35 Q100 12 105 35 Q110 12 115 38 Q117 15 120 40 Q120 18 125 43 Q127 20 130 45 Q133 22 135 48 Q138 25 140 50 Q143 28 145 52 Q148 30 150 55 Q153 35 155 60 Q158 38 160 62 Q160 40 165 60 Q167 45 168 65 Q170 50 172 68 Q174 55 176 70 Q178 55 182 72 Q186 58 190 75 Q194 65 198 80 Q200 70 202 85 Q200 95 190 100 Q160 110 80 110 Q40 110 24 98 Z" fill="#8B1010" opacity="0.25"/>
+        <path d="M30 90 Q35 65 40 78 Q45 52 50 70 Q55 42 60 65 Q65 38 70 62 Q75 32 82 58 Q88 28 95 55 Q100 25 108 52 Q115 22 125 50 Q132 25 140 52 Q148 28 155 55 Q160 32 165 58 Q168 38 172 60 Q176 44 178 65 Q182 55 185 73 Q186 85 175 92 Q150 105 90 105 Q55 105 36 95 Z" fill="#cc2200" opacity="0.3"/>
+        <path d="M50 90 Q58 62 65 78 Q72 50 80 70 Q88 40 96 65 Q104 35 115 60 Q122 30 135 58 Q142 35 150 60 Q156 42 160 65 Q162 78 152 88 Q135 100 100 100 Q70 100 55 93 Z" fill="#ff6b35" opacity="0.2"/>
+
+        <!-- HADES text -->
+        <text x="160" y="72" text-anchor="middle" font-family="Cinzel Decorative, serif" font-size="48" font-weight="900" fill="#d4af37" letter-spacing="6" filter="url(#glow)">HADES</text>
+        <!-- CODEX text -->
+        <text x="160" y="95" text-anchor="middle" font-family="Cinzel, serif" font-size="16" font-weight="400" fill="#a08828" letter-spacing="12">CODEX</text>
+
+        <!-- Side decorations -->
+        <line x1="12" y1="60" x2="30" y2="60" stroke="#d4af3744" stroke-width="0.5"/>
+        <line x1="290" y1="60" x2="308" y2="60" stroke="#d4af3744" stroke-width="0.5"/>
+        <polygon points="36,60 42,57 42,63" fill="#d4af3766"/>
+        <polygon points="284,60 278,57 278,63" fill="#d4af3766"/>
+
+        <defs>
+          <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur stdDeviation="3" result="blur"/>
+            <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+          </filter>
+        </defs>
+      </svg>
+    </div>
+
+    <div style="height:1px;background:linear-gradient(90deg,transparent,#d4af3744,transparent);width:320px;max-width:90vw;margin:0 auto 1.5rem"></div>
+
+    <div id="hero-tagline"></div>
+
+    <p class="hero-sub">Every build. Every god. Every boon. The complete interactive compendium for Hades — built for runners who want to actually escape.</p>
+
+    <div class="hero-ctas">
+      <button class="btn-primary" onclick="document.getElementById('weapons').scrollIntoView({behavior:'smooth'})">EXPLORE ARSENAL</button>
+      <button class="btn-outline" onclick="document.getElementById('heat').scrollIntoView({behavior:'smooth'})">HEAT CALCULATOR</button>
+    </div>
+
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-num">6</div>
+        <div class="hero-stat-label">Infernal Arms</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">10</div>
+        <div class="hero-stat-label">Olympian Gods</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">28</div>
+        <div class="hero-stat-label">Duo Boons</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">∞</div>
+        <div class="hero-stat-label">Possible Builds</div>
+      </div>
+    </div>
+
+    <div class="scroll-indicator">DESCEND</div>
+  </section>
+
+  <!-- ======================== WEAPONS ======================== -->
+  <section id="weapons">
+    <div class="greek-divider" style="max-width:800px;margin:0 auto 5rem"></div>
+    <div class="section-header">
+      <span class="section-eyebrow">INFERNAL ARMS</span>
+      <h2 class="section-title">The Arsenal</h2>
+      <p class="section-sub">Six weapons. Countless aspects. Hover to inspect — click to flip and reveal top builds for each aspect.</p>
+    </div>
+    <div id="weapons-grid"></div>
+  </section>
+
+  <!-- ======================== GODS ======================== -->
+  <section id="gods">
+    <div class="greek-divider" style="max-width:800px;margin:0 auto 5rem"></div>
+    <div class="section-header">
+      <span class="section-eyebrow">DIVINE PATRONAGE</span>
+      <h2 class="section-title">The Olympians</h2>
+      <p class="section-sub">Ten gods. Each offers unique boons that define your run. Hover to see their rating bar. Ranked by overall build potential.</p>
+    </div>
+    <div id="gods-grid"></div>
+  </section>
+
+  <!-- ======================== DUO BOONS ======================== -->
+  <section id="duos">
+    <div class="greek-divider" style="max-width:800px;margin:0 auto 5rem"></div>
+    <div class="section-header">
+      <span class="section-eyebrow">LEGENDARY SYNERGIES</span>
+      <h2 class="section-title">Duo Boons</h2>
+      <p class="section-sub">The most powerful boons in the game. Require at least one boon from each paired god. These are run-defining.</p>
+    </div>
+    <div id="duo-grid"></div>
+  </section>
+
+  <!-- ======================== BOON DATABASE ======================== -->
+  <section id="boons">
+    <div class="greek-divider" style="max-width:800px;margin:0 auto 5rem"></div>
+    <div class="section-header">
+      <span class="section-eyebrow">DIVINE KNOWLEDGE</span>
+      <h2 class="section-title">Boon Database</h2>
+      <p class="section-sub">Search and filter every boon by name, effect, or god. Know what to look for before each room.</p>
+    </div>
+    <div class="boon-search-wrap">
+      <input id="boon-search" type="search" placeholder="Search by name, effect, or god..."/>
+    </div>
+    <div id="boon-god-filter"></div>
+    <div id="boon-db-grid"></div>
+  </section>
+
+  <!-- ======================== HEAT CALCULATOR ======================== -->
+  <section id="heat">
+    <div class="greek-divider" style="max-width:800px;margin:0 auto 5rem"></div>
+    <div class="section-header">
+      <span class="section-eyebrow">PACT OF PUNISHMENT</span>
+      <h2 class="section-title">Heat Calculator</h2>
+      <p class="section-sub">Build your Pact of Punishment. Add conditions to calculate your total heat and see the difficulty rating.</p>
+    </div>
+    <div id="heat-builder"></div>
+  </section>
+
+  <!-- ======================== MIRROR ======================== -->
+  <section id="mirror">
+    <div class="greek-divider" style="max-width:800px;margin:0 auto 5rem"></div>
+    <div class="section-header">
+      <span class="section-eyebrow">DARKNESS UPGRADES</span>
+      <h2 class="section-title">Mirror of Night</h2>
+      <p class="section-sub">Optimal unlock priority order. Get Death Defiance before anything else — always.</p>
+    </div>
+    <div id="mirror-list"></div>
+  </section>
+
+  <!-- ======================== FOOTER ======================== -->
+  <footer>
+    <div class="greek-divider" style="max-width:600px;margin:0 auto 3rem"></div>
+    <div class="footer-logo">HADES CODEX</div>
+    <p class="footer-tagline">"The son of Hades will not be stopped. Not forever."</p>
+    <div class="footer-links">
+      <a class="footer-link" href="https://store.steampowered.com/app/1145360/Hades/" target="_blank">STEAM</a>
+      <a class="footer-link" href="https://hades.fandom.com/wiki/Hades_Wiki" target="_blank">WIKI</a>
+      <a class="footer-link" href="https://www.supergiantgames.com/" target="_blank">SUPERGIANT</a>
+      <a class="footer-link" href="/api/boons">API</a>
+    </div>
+    <p class="footer-copy">HADES CODEX is a fan project. Hades © Supergiant Games. Not affiliated with Supergiant Games.</p>
+    <p class="api-status" id="api-status">Data Version: 1.0 · 30 Boons Loaded</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="js/three-bg.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    // Init Three.js background after libs loaded
+    window.addEventListener('load', () => {
+      new HadesBackground('cosmos-bg');
+    });
+  </script>
+</body>
+</html>
