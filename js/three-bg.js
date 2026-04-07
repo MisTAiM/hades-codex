@@ -18,7 +18,8 @@ class HadesBackground {
     this.bgScene  = new THREE.Scene();
     this.bgCamera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
 
-    this.renderer = new THREE.WebGLRenderer({ canvas: this.canvas, alpha: false, antialias: false });
+    this.renderer = new THREE.WebGLRenderer({ canvas: this.canvas, alpha: true, antialias: false });
+    this.renderer.setClearColor(0x000000, 0);
     this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
     this.renderer.setSize(window.innerWidth, window.innerHeight);
     this.renderer.autoClear = false; /* We'll clear manually between passes */
@@ -129,10 +130,12 @@ class HadesBackground {
 
         vec3 col = fireColour(fire*1.25) * (0.85 + 0.15*vign);
 
-        /* Dark void base so the bg isn't white when fire=0 */
-        col = max(col, vec3(0.02,0.00,0.04));
+        /* Semi-transparent glow — dark CSS bg shows through */
+        /* Top of screen = very subtle, bottom = full fire */
+        float alpha = fire * (0.25 + rise * 0.45);
+        alpha = clamp(alpha, 0.0, 0.72);
 
-        gl_FragColor = vec4(col, 1.0);
+        gl_FragColor = vec4(col, alpha);
       }
     `;
 
@@ -142,6 +145,8 @@ class HadesBackground {
       vertexShader:   vert,
       fragmentShader: frag,
       uniforms:       { uTime: { value: 0 } },
+      transparent:    true,
+      blending:       THREE.AdditiveBlending,
       depthWrite:     false,
       depthTest:      false
     });
