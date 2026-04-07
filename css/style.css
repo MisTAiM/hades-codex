@@ -313,7 +313,7 @@ section {
 }
 
 /* ---- WEAPONS ---- */
-#weapons { background: linear-gradient(180deg, var(--void) 0%, var(--void-2) 100%); }
+#weapons { background: transparent; }
 #weapons-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -543,7 +543,7 @@ section {
 .bi-val { font-size: 0.8rem; color: var(--bone); font-family: var(--font-heading); }
 
 /* ---- GODS ---- */
-#gods { background: var(--void-2); }
+#gods { background: transparent; }
 #gods-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
@@ -667,7 +667,7 @@ section {
 }
 
 /* ---- DUO BOONS ---- */
-#duos { background: var(--void); }
+#duos { background: transparent; }
 #duo-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -727,7 +727,7 @@ section {
 }
 
 /* ---- BOON DATABASE ---- */
-#boons { background: var(--void-2); }
+#boons { background: transparent; }
 .boon-search-wrap {
   max-width: 900px;
   margin: 0 auto 1.5rem;
@@ -788,7 +788,7 @@ section {
 .no-results { color: var(--muted); font-style: italic; text-align: center; padding: 3rem; }
 
 /* ---- HEAT CALCULATOR ---- */
-#heat { background: var(--void); }
+#heat { background: transparent; }
 #heat-builder {
   max-width: 700px;
   margin: 0 auto;
@@ -893,7 +893,7 @@ section {
 .heat-reset:hover { border-color: var(--blood); color: var(--bone); }
 
 /* ---- MIRROR ---- */
-#mirror { background: var(--void-2); }
+#mirror { background: transparent; }
 #mirror-list {
   max-width: 700px;
   margin: 0 auto;
